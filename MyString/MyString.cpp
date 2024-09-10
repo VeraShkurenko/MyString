@@ -6,22 +6,33 @@ using namespace std;
 
 MyString::MyString()
 {
+    length = 80;
+	str = new char[length];
+}
+
+MyString::MyString(int size)
+{
+	length = size;
+	str = new char[length];
 
 }
 
-MyString::MyString(char* str)
+MyString::MyString(const char* inputStr)
 {
-	
-}
-
-MyString::MyString(char* str, int length)
-{
+	length = strlen(inputStr) + 1; 
+	str = new char[length];         
+	strcpy(str, inputStr);
 
 }
 
 MyString::~MyString()
 {
-
+	if (str != nullptr)
+	{
+		delete[] str;
+	}
+	cout << "Destruct\n";
+	Sleep(1000);
 }
 
 void MyString::Input()

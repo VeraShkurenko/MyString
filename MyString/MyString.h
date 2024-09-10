@@ -5,8 +5,8 @@ class MyString
 	int length; // длина строки
 public:
 	MyString(); // конструктор по умолчанию
-	MyString(char* str);
-	MyString(char* str, int length);
+	MyString(int size);
+	MyString(const char* inputStr);
 	~MyString();
 	void Input();
 	void OutPut();
