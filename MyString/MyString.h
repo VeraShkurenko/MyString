@@ -11,7 +11,7 @@ public:
 	void Input();
 	void OutPut();
 	void MyStrcpy(MyString& obj);// копирование строк
-	bool MyStrStr(const char* str);// поиск подстроки в строке
+	bool MyStrStr(const char* substr);// поиск подстроки в строке
 	int  MyChr(char c); // поиск символа в строке(индекс найденного символа, либо -1)
 	int MyStrLen();// возвращает длину строки
 	void MyStrCat(MyString& b); // объединение строк
