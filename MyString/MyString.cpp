@@ -29,6 +29,19 @@ MyString::MyString(const char* inputStr) {
     ++objectCount;
 }
 
+MyString::MyString(const MyString& obj)
+{
+    cout << "Copy constructor: " << endl;
+
+    length = obj.length;
+
+
+    str = new char[strlen(obj.str) + 1];
+
+    strcpy_s(str, strlen(obj.str) + 1, obj.str);
+
+}
+
 MyString::~MyString() {
     delete[] str;
     --objectCount;

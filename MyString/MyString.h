@@ -10,6 +10,7 @@ public:
     MyString();
     MyString(int size);
     MyString(const char* inputStr);
+    MyString(const MyString & obj);
     ~MyString();
     void Input();
     void OutPut() const;

@@ -7,11 +7,13 @@ using namespace std;
 
 int main()
 {
-    MyString str1;
-    MyString str2;
-    MyString str3;
+   /* MyString str1;
+    MyString str2;*/
 
-    cout << "Enter a string for str3 (initial string): ";
+    MyString str3 = "hello";
+    str3.OutPut();
+   
+   /* cout << "Enter a string for str3 (initial string): ";
     str3.Input();
 
     cout << "Enter a string for str1: ";
@@ -38,7 +40,12 @@ int main()
     result.MyStrCat(str1);
     result.MyStrCat(str2);
     cout << "Concatenated string result: ";
-    result.OutPut();
+    result.OutPut();*/
+
+    MyString str4 = str3;
+    str3.OutPut();
+
+
 
     cout << "Number of MyString objects: " << MyString::GetObjectCount() << endl;
 
