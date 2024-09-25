@@ -22,4 +22,9 @@ public:
     void MyDelChr(char c);
     int MyStrCmp(const MyString& b) const;
     static int GetObjectCount();
+    MyString& operator=(const MyString& obj);
+    int operator[](int index);
+    operator int ();
+    void operator ()();
+
 };

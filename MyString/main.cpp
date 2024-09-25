@@ -50,5 +50,9 @@ int main()
     cout << "Number of MyString objects: " << MyString::GetObjectCount() << endl;
 
 
+    MyString str3[1];
+
+
+
     return 0;
 }

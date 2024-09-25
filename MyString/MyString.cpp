@@ -135,3 +135,45 @@ int MyString::MyStrCmp(const MyString& b) const {
 int MyString::GetObjectCount() {
     return objectCount;
 }
+
+MyString& MyString::operator=(const MyString& obj)
+{
+    if (this == &obj)
+    {
+        return *this;
+    }
+
+    if (str != nullptr)
+    {
+        delete[] str;
+    }
+    length = obj.length;
+
+
+    str = new char[strlen(obj.str) + 1];
+
+    strcpy_s(str, strlen(obj.str) + 1, obj.str);
+
+    return*this;
+}
+
+int MyString::operator[](int index)
+{
+    return str[index];
+}
+
+MyString::operator int()
+{
+    return length;
+}
+
+void MyString:: operator ()()
+{
+    if (str != nullptr) {
+        cout << str << endl;
+    }
+    else {
+        cout << "String is empty." << endl;
+    }
+}
+
