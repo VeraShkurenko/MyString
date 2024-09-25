@@ -7,12 +7,21 @@ using namespace std;
 
 int main()
 {
-   /* MyString str1;
-    MyString str2;*/
+    MyString str1 = "one";
+    str1();
+    MyString str2 = "two";
+    char a = str2[0];
+    cout << endl;
+    cout << a;
+ 
 
     MyString str3 = "hello";
     str3.OutPut();
    
+
+
+
+
    /* cout << "Enter a string for str3 (initial string): ";
     str3.Input();
 
@@ -42,15 +51,15 @@ int main()
     cout << "Concatenated string result: ";
     result.OutPut();*/
 
-    MyString str4 = str3;
-    str3.OutPut();
+   /* MyString str4 = str3;
+    str3.OutPut();*/
 
 
 
     cout << "Number of MyString objects: " << MyString::GetObjectCount() << endl;
 
 
-    MyString str3[1];
+
 
 
 
