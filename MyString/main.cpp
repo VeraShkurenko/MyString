@@ -4,6 +4,32 @@
 
 using namespace std;
 
+ostream& operator<<(ostream& os, MyString& obj)
+{
+    for (int i = 0; i < obj.length; i++)
+    {
+        os << obj.str[i] << " ";
+    }
+    return os;
+
+}
+
+istream& operator>>(istream& is, MyString& obj)
+{
+    for (int i = 0; i < obj.length; i++)
+    {
+        is >> obj.str[i];
+    }
+    return is;
+
+}
+
+MyString operator+(MyString& obj, int a)
+{
+   
+}
+
+
 
 int main()
 {
@@ -19,6 +45,14 @@ int main()
     str3.OutPut();
    
 
+    MyString str4 = move(str3);
+    str4.OutPut();
+
+    str1 = move(str4);
+    str1.OutPut();
+
+    MyString b;
+    b = "Hello" + a;
 
 
 

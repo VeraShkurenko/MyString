@@ -2,9 +2,13 @@
 #include <iostream>
 #include <cstring>
 
+using namespace std;
+
 class MyString {
     char* str;
     int length;
+    friend ostream& operator<< (ostream& os, MyString& obj);
+    friend istream& operator>> (istream& is, MyString& obj);
     static int objectCount;
 public:
     MyString();
@@ -26,5 +30,9 @@ public:
     int operator[](int index);
     operator int ();
     void operator ()();
+    MyString(MyString&& obj);
+    MyString& operator=(MyString&& obj);
+    MyString& operator+=(int a);
+    
 
 };

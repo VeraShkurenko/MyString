@@ -47,6 +47,8 @@ MyString::~MyString() {
     --objectCount;
 }
 
+
+
 void MyString::Input() {
     delete[] str;
     char buff[1000];
@@ -176,4 +178,55 @@ void MyString:: operator ()()
         cout << "String is empty." << endl;
     }
 }
+
+MyString::MyString(MyString&& obj)
+{
+    length = obj.length;
+    obj.length = 0;
+
+    str = obj.str;
+    obj.str = nullptr;
+}
+
+MyString& MyString::operator=(MyString&& obj)
+{
+    if (str != nullptr)
+    {
+        delete[] str;
+    }
+
+    length = obj.length;
+    obj.length = 0;
+
+    str = obj.str;
+    obj.str = nullptr;
+
+    cout << "Move =  \n";
+    return *this;
+
+    // TODO: insert return statement here
+}
+
+MyString& MyString::operator+=(int a)
+{
+    char* temp = new char[length + a];
+
+    for (int i = 0; i < length; i++)
+    {
+        temp[i] = str[i];
+    }
+
+    for (int i = length; i < length + a; i++)
+    {
+        temp[i] = 0;
+    }
+
+    delete[] str;
+    str = temp;
+    length += a;
+
+    return *this;
+
+}
+
 
