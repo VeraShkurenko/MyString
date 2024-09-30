@@ -1,7 +1,6 @@
 ﻿#pragma once
 #include <iostream>
 #include <cstring>
-
 using namespace std;
 
 class MyString {
@@ -27,12 +26,13 @@ public:
     int MyStrCmp(const MyString& b) const;
     static int GetObjectCount();
     MyString& operator=(const MyString& obj);
-    int operator[](int index);
+    char& operator[](int index);
     operator int ();
     void operator ()();
     MyString(MyString&& obj);
     MyString& operator=(MyString&& obj);
     MyString& operator+=(int a);
-    
+    const char* GetStr() const;
+    void SetStr(const char* newStr);
 
 };

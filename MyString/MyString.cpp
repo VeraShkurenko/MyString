@@ -159,7 +159,7 @@ MyString& MyString::operator=(const MyString& obj)
     return*this;
 }
 
-int MyString::operator[](int index)
+char& MyString::operator[](int index)
 {
     return str[index];
 }
@@ -227,6 +227,19 @@ MyString& MyString::operator+=(int a)
 
     return *this;
 
+}
+
+const char* MyString::GetStr() const 
+{
+    return str;
+}
+
+void MyString::SetStr(const char* newStr) 
+{
+    delete[] str;
+    length = strlen(newStr) + 1;
+    str = new char[length];
+    strcpy_s(str, length, newStr);
 }
 
 

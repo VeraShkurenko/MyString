@@ -24,35 +24,56 @@ istream& operator>>(istream& is, MyString& obj)
 
 }
 
-MyString operator+(MyString& obj, int a)
+MyString operator+(const MyString& left, const MyString& right) 
 {
-   
+    int newLength = left.MyStrLen() + right.MyStrLen() + 1;
+    char* newStr = new char[newLength];
+
+    strcpy_s(newStr, newLength, left.GetStr());
+    strcat_s(newStr, newLength, right.GetStr());
+
+    return MyString(newStr); 
 }
 
+
+MyString operator+(const char* left, const MyString& right) 
+{
+    return MyString(left) + right; 
+}
 
 
 int main()
 {
     MyString str1 = "one";
     str1();
+    cout << "str1: " << str1 << endl;
     MyString str2 = "two";
     char a = str2[0];
+    cout << "str2: " << str2 << endl;
     cout << endl;
-    cout << a;
+    cout << "a: " << a << endl;
  
 
     MyString str3 = "hello";
-    str3.OutPut();
+    cout << "str3: " << str3 << endl;
+
    
 
     MyString str4 = move(str3);
-    str4.OutPut();
+    cout << "str4: " << str4 << endl;
+
 
     str1 = move(str4);
-    str1.OutPut();
+    cout << str1;
+    cout << str4;
+
+    MyString str5 = "Hiiii";
+    str5();
 
     MyString b;
-    b = "Hello" + a;
+    b = "Hello" + str5;
+    cout << "b: " << b;
+
 
 
 
