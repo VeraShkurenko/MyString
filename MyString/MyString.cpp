@@ -8,7 +8,25 @@ using namespace std;
 
 int MyString::objectCount = 0;
 
-MyString::MyString() {
+MyString::MyString(initializer_list<char> a)
+{
+    cout << "Initializer_list constructor: " << endl;
+    cout <<"size: " << a.size() << endl;
+    length = a.size();
+    str = new char[length];
+    char* tempStr = str;
+    for (auto x = a.begin(); x != a.end(); x++)
+    {
+        *tempStr = *x;
+        tempStr++;
+    }
+
+
+}
+
+
+MyString::MyString()
+{
     length = 80;
     str = new char[length];
     str[0] = '\0';

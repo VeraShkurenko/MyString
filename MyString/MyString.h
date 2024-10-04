@@ -10,6 +10,7 @@ class MyString {
     friend istream& operator>> (istream& is, MyString& obj);
     static int objectCount;
 public:
+    MyString(initializer_list<char> a);
     MyString();
     MyString(int size);
     MyString(const char* inputStr);

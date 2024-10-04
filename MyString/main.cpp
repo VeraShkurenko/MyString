@@ -74,6 +74,11 @@ int main()
     b = "Hello" + str5;
     cout << "b: " << b;
 
+    cout << endl;
+
+    MyString c{ 'd', 'i', 'v', 'i', 'n','e' };
+    cout << c;
+    cout << endl;
 
 
 
