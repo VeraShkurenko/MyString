@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 #include "MyString.h"
 #include <Windows.h>
+#include <fstream>
 
 using namespace std;
 
@@ -44,41 +45,41 @@ MyString operator+(const char* left, const MyString& right)
 
 int main()
 {
-    MyString str1 = "one";
-    str1();
-    cout << "str1: " << str1 << endl;
-    MyString str2 = "two";
-    char a = str2[0];
-    cout << "str2: " << str2 << endl;
-    cout << endl;
-    cout << "a: " << a << endl;
+    //MyString str1 = "one";
+    //str1();
+    //cout << "str1: " << str1 << endl;
+    //MyString str2 = "two";
+    //char a = str2[0];
+    //cout << "str2: " << str2 << endl;
+    //cout << endl;
+    //cout << "a: " << a << endl;
  
 
-    MyString str3 = "hello";
-    cout << "str3: " << str3 << endl;
+    //MyString str3 = "hello";
+    //cout << "str3: " << str3 << endl;
 
    
 
-    MyString str4 = move(str3);
-    cout << "str4: " << str4 << endl;
+    //MyString str4 = move(str3);
+    //cout << "str4: " << str4 << endl;
 
 
-    str1 = move(str4);
-    cout << str1;
-    cout << str4;
+    //str1 = move(str4);
+    //cout << str1;
+    //cout << str4;
 
-    MyString str5 = "Hiiii";
-    str5();
+    //MyString str5 = "Hiiii";
+    //str5();
 
-    MyString b;
-    b = "Hello" + str5;
-    cout << "b: " << b;
+    //MyString b;
+    //b = "Hello" + str5;
+    //cout << "b: " << b;
 
-    cout << endl;
+    //cout << endl;
 
-    MyString c{ 'd', 'i', 'v', 'i', 'n','e' };
-    cout << c;
-    cout << endl;
+    //MyString c{ 'd', 'i', 'v', 'i', 'n','e' };
+    //cout << c;
+    //cout << endl;
 
 
 
@@ -116,12 +117,11 @@ int main()
 
 
 
-    cout << "Number of MyString objects: " << MyString::GetObjectCount() << endl;
+    /*cout << "Number of MyString objects: " << MyString::GetObjectCount() << endl;*/
 
 
-
-
-
-
+    MyString myStr("Hello, World!");
+    myStr.Save("output.txt");
     return 0;
+
 }

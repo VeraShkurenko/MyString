@@ -35,5 +35,5 @@ public:
     MyString& operator+=(int a);
     const char* GetStr() const;
     void SetStr(const char* newStr);
-
+    void Save(const char* filename);
 };

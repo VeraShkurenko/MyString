@@ -3,6 +3,7 @@
 #include <iostream>
 #include <cstring>
 #include <Windows.h>
+#include <fstream>
 
 using namespace std;
 
@@ -258,6 +259,21 @@ void MyString::SetStr(const char* newStr)
     length = strlen(newStr) + 1;
     str = new char[length];
     strcpy_s(str, length, newStr);
+}
+
+void MyString::Save(const char* filename)
+{
+    ofstream file(filename);
+    if (file.is_open()) 
+    {
+        file << str;
+        file.close();
+    }
+    else
+    {
+        cout << "Could not open the file." << endl;
+    }
+
 }
 
 
